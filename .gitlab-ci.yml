@@ -1,7 +1,7 @@
 stages:
-    -lint
-    -build
-    -deploy
+    - lint
+    - build
+    - deploy
 
 lint-html-css:
     stage: lint
