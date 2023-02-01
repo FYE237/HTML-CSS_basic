@@ -10,7 +10,7 @@ lint-html-css:
     image: node
     script: 
         - ./test.sh
-    artificats:
+    artifacts:
         paths:
             -linthtml_report.txt
 
