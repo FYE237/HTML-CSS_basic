@@ -1,8 +1,41 @@
+stage:
+    -lint
+    -build
+    -deploy
+
+lint-html-css:
+    stage: lint
+    tags:
+        - docker
+    image: node
+    script: 
+        - ./test.sh
+    artificats:
+        paths:
+            -linthtml_report.txt
+
+minify:
+    stage: build
+    tags:
+        - docker
+    image: node
+    script:
+        - npm install minify
+        - mkdir -p build
+        - for f in *.{html,css,js}; do npx minify "$f" > "build/$f"
+    artifacts:
+        paths:
+        - build
+       
+
 pages: 
+    stage: deploy
     script:
         - mkdir -p public # Création du répertoire public
         - cp Exercice-01.html public/index.html
         - cp Exercice-02.html public/index2.html
     artifacts:
         paths:
-            - public 
+            - public
+    dependencies:
+        - minify
