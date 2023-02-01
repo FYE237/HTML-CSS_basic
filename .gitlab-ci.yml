@@ -22,7 +22,7 @@ minify:
     script:
         - npm install minify
         - mkdir -p build
-        - for f in *.{html,css,js}; do npx minify "$f" > "build/$f"
+        - for f in *.{html,css,js}; do npx minify "$f" > "build/$f" ; done
     artifacts:
         paths:
         - build
