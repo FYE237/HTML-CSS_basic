@@ -12,7 +12,7 @@ lint-html-css:
         - ./test.sh
     artifacts:
         paths:
-            -linthtml_report.txt
+            - linthtml_report.txt
 
 minify:
     stage: build
