@@ -10,9 +10,11 @@ lint-html-css:
     image: node
     script: 
         - ./test.sh
+        - ./test_css.sh
     artifacts:
         paths:
             - linthtml_report.txt
+            - lintcss_report.txt
 
 minify:
     stage: build
