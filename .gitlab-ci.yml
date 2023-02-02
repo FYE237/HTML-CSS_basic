@@ -3,18 +3,28 @@ stages:
     - build
     - deploy
 
-lint-html-css:
+lint-html:
     stage: lint
     tags:
         - docker
     image: node
     script: 
         - ./test.sh
-        - ./test_css.sh
     artifacts:
         paths:
             - linthtml_report.txt
-            - lintcss_report.txt
+
+lintcss:
+    stage: lint
+    tags:
+        - docker
+    image: node
+    script: 
+        - ./test_css.sh
+    artifacts:
+        paths:
+            - css_report.txt
+
 
 minify:
     stage: build
@@ -35,9 +45,12 @@ pages:
     script:
         - mkdir -p public # Création du répertoire public
         - cp Exercice-01.html public/index.html
-        - cp Exercice-02.html public/index2.html
+        - cp Exercice-02.html public/page2.html
+        - cp Exercice-11.html public/page11.html
     artifacts:
         paths:
             - public
     dependencies:
         - minify
+
+# Vos pages sont  : Settings → Pages → Your pages are served here
