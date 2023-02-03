@@ -3,4 +3,7 @@
 IL s'agit d'un projet qui permet de prendre en main le langage HTML, le langage CSS. On construit une page web responsive. En utilisant des notions telles 
 Les flexbox,float, les selecteurs CSS etc..
 
+# TESTS 
+  Des scripts de test permettant de vérifier que le code écrit respecte la sémantique , les conventions du HTML/CSS sont aussi fournis. IL s'agit des fichiers test_sh , test_css.sh
+
 Le projet est déployé sur ce lien : https://fye237.github.io/HTML-CSS_basic/Exercice-11
